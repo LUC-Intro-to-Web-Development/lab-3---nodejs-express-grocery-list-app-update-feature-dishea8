@@ -32,7 +32,6 @@ app.get('/', function (req, res) {
 	//Execute creatItems method
 	dbOperations.createItem(item_name, item_count, res);
 
-	
  })
 
  // Route that allows me to delete a grocery list item
@@ -43,5 +42,13 @@ app.get('/', function (req, res) {
 	
  })
 
- 
+ // Route that allows me to update  grocery list item
+ app.post('/update_item', function (req, res){
+
+ //Getting body parameters
+ 	const { item_count} = req.body;
+
+	//Execute updateItem method
+	dbOperations.updateItem(item_count, res);
+})	
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

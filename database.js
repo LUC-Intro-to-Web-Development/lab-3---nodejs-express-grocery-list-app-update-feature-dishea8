@@ -80,4 +80,21 @@ let deleteItem = (recordToDelete, res) =>{
     getAllItems(res);
 }
 
-module.exports = {deleteItem, createItem, getAllItems}
+//Update a Grocery List Item
+let updateItem = (recordToUpdate, res) => {
+    var updateGroceryListItem = 'UPDATE Grocery_item SET item_count = 1 WHERE item_id = ?';
+    //var parmas = [id];
+    var params = [recordToUpdate];
+
+    db.run(updateGroceryListItem, params, function(err) {
+
+        if(err) {
+            return console.log(err.message);
+            }
+        console.log("Grocery Item Updated");
+        console.group('Rows affected $[this.changes]');
+
+    })
+}
+
+module.exports = {deleteItem, createItem, getAllItems, updateItem}
