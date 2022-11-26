@@ -54,9 +54,12 @@
                         <td>
                             <form action="/delete_item" method="POST">
                                 <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.itemID}}">DELETE</button>
+                            </form>
+                            </td>
                             
-                            <form action="/update_item" method="POST">
+                        <td><form action="/update_item" method="POST">
                                 <button name="updaterecord" id="updatenow" type="submit" class="btn btn-success" value="{{this.itemID}}">UPDATE</button>
+                                <input type="number"  name="item_count" class="form-control" placeholder="Update quantity (ex. 2)" size="60"><br>
                         </form>
                         </td>
                         
