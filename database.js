@@ -81,7 +81,7 @@ let deleteItem = (recordToDelete, res) =>{
 }
 
 //Update a Grocery List Item
-let updateItem = (recordToUpdate, res) => {
+let updateItem = (recordToUpdate, item_count, res) => {
     var updateGroceryItem = 'UPDATE Grocery_item SET item_count = 1 WHERE itemID = ?';
     //var parmas = [id];
     var params = [recordToUpdate];

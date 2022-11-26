@@ -46,10 +46,10 @@ app.get('/', function (req, res) {
  app.post('/update_item', function (req, res){
 
  //Getting body parameters
- 	const { updateRecord, item_count} = req.body;
+ 	const {item_count, updateRecord} = req.body;
 
 	//Execute updateItem method
-	dbOperations.updateItem(updateRecord, item_count, res);
-	//console.log("This is working");
+	dbOperations.updateItem(item_count, res);
+	console.log("This is working");
 })	
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
