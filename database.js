@@ -42,6 +42,7 @@ let createItem = (item_name, item_count, res) =>{
 
 
 
+
 //Display all Grocery all grocery List Items
 let getAllItems = (res) => {
     var getAllGroceryItems = 'SELECT itemID, item_name, item_count FROM grocery_item';
@@ -79,5 +80,24 @@ let deleteItem = (recordToDelete, res) =>{
 
     getAllItems(res);
 }
+
+//deleteItem = (1, )
+
+//Update a Grocery List Item
+
+let selectItem = (recordToUpdate, res) =>{
+    var selectGroceryListItem = 'SELECT item_name, item_count FROM grocery_item WHERE itemID = ?'
+    var params = [recordToUpdate];
+    
+    db.run(selectGroceryListItem, params, function(err){
+        if(err){
+            return console.log(err.message);
+        }
+        console.log("Grocery Item Updated");
+        console.log('Rows updated ${this.changes]');
+    })
+}
+
+selectItem(17);
 
 module.exports = {deleteItem, createItem, getAllItems}
