@@ -54,6 +54,14 @@
                         <td>
                             <form action="/delete_item" method="POST">
                                 <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.itemID}}">DELETE</button>
+                         
+                            <form action="/update_item" method="POST">
+                                <button name="updaterecord" id="updatenow" type="button" class="btn btn-success" value="{{this.itemID}}">UPDATE</button>
+                            </form>
+                        </td>
+
+
+                         
                             </form>
                         </td>
                         
