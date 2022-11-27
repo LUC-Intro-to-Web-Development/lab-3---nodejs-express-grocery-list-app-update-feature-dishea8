@@ -84,7 +84,7 @@ let deleteItem = (recordToDelete, res) =>{
 let updateItem = (recordToUpdate, item_count, res) => {
     var updateGroceryItem = 'UPDATE Grocery_item SET item_count = 1 WHERE itemID = ?';
     //var parmas = [id];
-    var params = [recordToUpdate];
+    var params = [recordToUpdate, update_count];
 
     db.run(updateGroceryItem, params, function(err) {
 
