@@ -52,9 +52,9 @@
                         <td>{{this.item_name}}</td>
                         <td>{{this.item_count}}</td>
                         <td>
-                            <form action="/delete_item" method="POST">
-                                <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.itemID}}">DELETE</button>
-                         
+                            <form action="/delete_item" method="POST" style = "float: left; margin-right: 12px;">
+                                <button name="deleterecord" id="deletenow" type="update" class="btn btn-danger" value="{{this.itemID}}">DELETE</button>
+                            </form>
                             <form action="/update_item" method="POST">
                                 <button name="updaterecord" id="updatenow" type="button" class="btn btn-success" value="{{this.itemID}}">UPDATE</button>
                             </form>
