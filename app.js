@@ -53,5 +53,16 @@ app.get('/', function (req, res) {
 	
 
  })
+
+ //Route that confirms changes to the database
  
+ app.post('/confirm_update', function (req, res) {
+	// Getting body parameters
+	//const {updaterecord} = req.body;
+
+	//dbOperations.();
+	console.log("This is the confirm update item route");
+	
+
+ })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

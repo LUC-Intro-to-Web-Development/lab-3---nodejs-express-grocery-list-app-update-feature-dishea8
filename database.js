@@ -80,12 +80,15 @@ let deleteItem = (recordToDelete, res) =>{
     getAllItems(res);
 }
 
-let updateItem = (item_name, item_count, res) =>{
-    var updateGroceryListItem = '[YOUR SQL STATEMENT]'
+/* let updateItem = () =>{
+    var updateGroceryListItem = 'UPDATE grocery_item SET item_name = Diana WHERE itemID = 14';
     
     db.run(updateGroceryListItem, function(err){
+    console.log(item_name);
     
-    })}
+    })} */
+
+//aID, newName, newCount, res
 
 let getAItem = (aID, res) => {
         var getAGroceryItem = 'SELECT itemID, item_name, item_count FROM grocery_item WHERE itemID = ?';
@@ -105,5 +108,6 @@ let getAItem = (aID, res) => {
         })
     }
 
+//updateItem();
 
 module.exports = {deleteItem, getAItem, createItem, getAllItems}
