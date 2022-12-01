@@ -43,5 +43,12 @@ app.get('/', function (req, res) {
 	
  })
 
+ //Route that allows me to update a grocery list itme
+ app.post('/update_item', function (req, res) {
+
+	const {updaterecord} = req.body;
+	console.log("This is the update item route and id #" + updaterecord + " was sent back to the server");
+
+ })
  
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

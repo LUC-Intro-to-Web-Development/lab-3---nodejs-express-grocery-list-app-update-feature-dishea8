@@ -80,4 +80,30 @@ let deleteItem = (recordToDelete, res) =>{
     getAllItems(res);
 }
 
-module.exports = {deleteItem, createItem, getAllItems}
+let updateItem = (item_name, item_count, res) =>{
+    var updateGroceryListItem = '[YOUR SQL STATEMENT]'
+    
+    db.run(updateGroceryListItem, function(err){
+    
+    })}
+
+let getAItem = (aID) => {
+        var getAGroceryItem = 'SELECT itemID, item_name, item_count FROM grocery_item WHERE itemID = ?';
+        var params = [aID];
+        
+        db.get(getAGroceryItem, params, function(err, row){
+            if (err) {
+             
+                throw err;
+              }
+              /*rows.forEach((row) => {
+                console.log(row.item_name);
+              });*/
+              console.log(row);
+            //  res.render('index', {rows})
+    
+        })
+    }
+
+
+module.exports = {deleteItem, getAItem, createItem, getAllItems}
