@@ -87,7 +87,7 @@ let updateItem = (item_name, item_count, res) =>{
     
     })}
 
-let getAItem = (aID) => {
+let getAItem = (aID, res) => {
         var getAGroceryItem = 'SELECT itemID, item_name, item_count FROM grocery_item WHERE itemID = ?';
         var params = [aID];
         
@@ -100,7 +100,7 @@ let getAItem = (aID) => {
                 console.log(row.item_name);
               });*/
               console.log(row);
-            //  res.render('index', {rows})
+            res.render('update', {row})
     
         })
     }

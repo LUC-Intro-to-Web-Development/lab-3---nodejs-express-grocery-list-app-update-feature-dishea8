@@ -43,11 +43,14 @@ app.get('/', function (req, res) {
 	
  })
 
- //Route that allows me to update a grocery list itme
+ //Route that allows me to get the item that I want to update 
  app.post('/update_item', function (req, res) {
-
+	// Getting body parameters
 	const {updaterecord} = req.body;
+
+	dbOperations.getAItem(updaterecord, res);
 	console.log("This is the update item route and id #" + updaterecord + " was sent back to the server");
+	
 
  })
  
