@@ -50,11 +50,11 @@ let getAllItems = (res) => {
          
             throw err;
           }
-          /*rows.forEach((row) => {
+          rows.forEach((row) => {
             console.log(row.item_name);
-          });*/
-          console.log(rows);
-          res.render('index', {rows})
+          });
+          //console.log(rows);
+          //res.render('index', {rows})
 
     })
 }
@@ -80,6 +80,17 @@ let deleteItem = (recordToDelete, res) =>{
     getAllItems(res);
 }
 
+let updateItem = () =>{
+    var updateGroceryListItem = 'UPDATE grocery_item SET item_name = "Peppers" WHERE itemID = 18'
+    
+    db.run(updateGroceryListItem, function(err, row){
+    console.log(`Row updated ${this.changes}`);
+   
+    })
+}
+
+updateItem();
+
 /* let updateItem = () =>{
     var updateGroceryListItem = 'UPDATE grocery_item SET item_name = Diana WHERE itemID = 14';
     
@@ -99,15 +110,15 @@ let getAItem = (aID, res) => {
              
                 throw err;
               }
-              /*rows.forEach((row) => {
-                console.log(row.item_name);
-              });*/
+             // rows.forEach((row) => {
+               // console.log(row.item_name);
+             // });
               console.log(row);
-            res.render('update', {row})
+             res.render('update', {row})
     
         })
     }
 
-//updateItem();
 
-module.exports = {deleteItem, getAItem, createItem, getAllItems}
+
+module.exports = {deleteItem, getAItem, createItem, updateItem, getAllItems}
