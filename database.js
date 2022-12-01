@@ -80,16 +80,25 @@ let deleteItem = (recordToDelete, res) =>{
     getAllItems(res);
 }
 
-let updateItem = () =>{
-    var updateGroceryListItem = 'UPDATE grocery_item SET item_name = "Peppers" WHERE itemID = 18'
+let updateItem = (x, y) =>{
     
-    db.run(updateGroceryListItem, function(err, row){
-    console.log(`Row updated ${this.changes}`);
+    var updateGroceryListItem = 'UPDATE grocery_item SET item_name = ?, item_count = ? WHERE itemID = 11';
+    //var updateGroceryListItemCount = 'UPDATE grocery_item SET item_count = y WHERE itemID = 11';
+    var params = [x, y];
+    
+    db.run(updateGroceryListItem, params, function(err, row){
+        if (err){
+			return console.log(err.message);
+		}
+    
+
+		console.log("Grocery Item Updated");
+		console.log(`Rows deleted ${this.changes}`);
    
     })
 }
 
-updateItem();
+updateItem("Milk", 2);
 
 /* let updateItem = () =>{
     var updateGroceryListItem = 'UPDATE grocery_item SET item_name = Diana WHERE itemID = 14';
