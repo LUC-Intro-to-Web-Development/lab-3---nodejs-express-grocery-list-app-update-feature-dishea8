@@ -58,10 +58,10 @@ app.get('/', function (req, res) {
  
  app.post('/confirm_update', function (req, res) {
 	// Getting body parameters
-	//const {updaterecord} = req.body;
+	const {item_name, item_count} = req.body;
 
 	//dbOperations.();
-	console.log("This is the confirm update item route");
+	console.log("This is the confirm update route. The new name is " + item_name + " and the new count is " + item_count + " .");
 	
 
  })
