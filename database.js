@@ -97,8 +97,8 @@ let updateItem = (x, y, z, res) =>{
         
     })
 
-    //getAllItems(res);
-    //res.render('index')
+    getAllItems(res);
+ 
 }
 
 let getAItem = (aID, res) => {
