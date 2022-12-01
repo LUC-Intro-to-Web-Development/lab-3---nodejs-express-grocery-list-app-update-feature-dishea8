@@ -50,11 +50,11 @@ let getAllItems = (res) => {
          
             throw err;
           }
-          rows.forEach((row) => {
-            console.log(row.item_name);
-          });
-          //console.log(rows);
-          //res.render('index', {rows})
+          //rows.forEach((row) => {
+            //console.log(row.item_name);
+          //});
+          console.log(rows);
+          res.render('index', {rows})
 
     })
 }
@@ -80,11 +80,10 @@ let deleteItem = (recordToDelete, res) =>{
     getAllItems(res);
 }
 
-let updateItem = (x, y) =>{
+let updateItem = (x, y, z, res) =>{
     
-    var updateGroceryListItem = 'UPDATE grocery_item SET item_name = ?, item_count = ? WHERE itemID = 11';
-    //var updateGroceryListItemCount = 'UPDATE grocery_item SET item_count = y WHERE itemID = 11';
-    var params = [x, y];
+    var updateGroceryListItem = 'UPDATE grocery_item SET item_name = ?, item_count = ? WHERE itemID = ?';
+    var params = [x, y, z];
     
     db.run(updateGroceryListItem, params, function(err, row){
         if (err){
@@ -93,22 +92,14 @@ let updateItem = (x, y) =>{
     
 
 		console.log("Grocery Item Updated");
-		console.log(`Rows deleted ${this.changes}`);
-   
+		console.log(`# Rows updated ${this.changes}`);
+
+        
     })
+
+    //getAllItems(res);
+    //res.render('index')
 }
-
-updateItem("Milk", 2);
-
-/* let updateItem = () =>{
-    var updateGroceryListItem = 'UPDATE grocery_item SET item_name = Diana WHERE itemID = 14';
-    
-    db.run(updateGroceryListItem, function(err){
-    console.log(item_name);
-    
-    })} */
-
-//aID, newName, newCount, res
 
 let getAItem = (aID, res) => {
         var getAGroceryItem = 'SELECT itemID, item_name, item_count FROM grocery_item WHERE itemID = ?';

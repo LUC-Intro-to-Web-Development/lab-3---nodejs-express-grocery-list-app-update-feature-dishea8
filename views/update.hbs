@@ -31,13 +31,14 @@
             <h1>Family Grocery List</h1>
 
             
-            <!--Form to accept grocery data-->
+            <!--Form to update grocery data-->
             <h2>Update Grocery Item:</h2>
             <form action="/confirm_update" method="POST">
                 <input type="text"  name="item_name" class="form-control"  placeholder="Enter grocery item (ex. Cereal)" value = "{{row.item_name}}" size="40"><br>
                 <input type="number"  name="item_count" class="form-control" placeholder="Enter quantity (ex. 2)" value = "{{row.item_count}}" size="60"><br>
-                <input type="submit" name = "confirmupdate" class="btn btn-primary" value="confirm">
-            </form>
+               <!--<input type="submit" name = "confirmupdate" class="btn btn-primary" value="submit" size = "60">-->
+                <button name="confirmupdate" id="confirmnow" type="confirm" class="btn btn-primary" value="{{row.itemID}}">CONFIRM</button>
+             </form>
 
         </div>
     </body>
