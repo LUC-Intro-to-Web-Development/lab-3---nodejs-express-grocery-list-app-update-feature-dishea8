@@ -61,7 +61,7 @@ app.get('/', function (req, res) {
 	const {item_name, item_count, confirmupdate} = req.body;
 
 
-	dbOperations.updateItem(item_name, item_count, confirmupdate);
+	dbOperations.updateItem(item_name, item_count, confirmupdate, res);
 	console.log("This is the confirm update route. The new name is " + item_name + " and the new count is " + item_count + " and the id is: " + confirmupdate);
 	
 
